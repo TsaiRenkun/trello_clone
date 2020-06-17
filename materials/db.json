@@ -1,0 +1,32 @@
+{
+  "columns": [
+    {
+      "id": 1,
+      "title": "To do"
+    },
+    {
+      "id": 2,
+      "title": "In progress"
+    },
+    {
+      "id": 3,
+      "title": "Trash"
+    },
+    {
+      "id": 4,
+      "title": "Completed"
+    },
+    {
+      "title": "NEWNEWNEW",
+      "id": 5
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "title": "Doing stuff",
+      "body": "some comment",
+      "column_id": 1
+    }
+  ]
+}
