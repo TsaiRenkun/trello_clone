@@ -1,16 +1,30 @@
 {
   "columns": [
     {
-      "title": "SS",
+      "title": "TO do",
       "id": 1
+    },
+    {
+      "title": "second",
+      "id": 2
+    },
+    {
+      "title": "aa",
+      "id": 3
     }
   ],
   "cards": [
     {
-      "title": "Doing stuff",
-      "column_id": "1",
+      "title": "asd",
+      "column_id": 1,
       "description": "",
       "id": 1
+    },
+    {
+      "title": "sd",
+      "column_id": 1,
+      "description": "",
+      "id": 2
     }
   ]
 }

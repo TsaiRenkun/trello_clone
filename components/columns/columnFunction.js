@@ -1,4 +1,5 @@
 const getColumns = () => {
+  
   const url = "http://localhost:3000/";
 
   //Set up of communcations
@@ -11,90 +12,118 @@ const getColumns = () => {
   request.addEventListener("readystatechange", displayColumns, false);
 
   //Recevied Data from Request
+  addColumn();
 
   function displayColumns() {
     if (request.readyState == 4) {
       const main = document.querySelector("main");
-      const add_List = document.querySelector("add-list");
-
       const colArray = JSON.parse(request.response);
 
       //Creating columns from db.json
       for (let i = 0; i < colArray.length; i++) {
-        var column = document.createElement("show-column");
-
-        //Display the column
-
-        column.setAttribute("id", colArray[i].id);
+          //Display the column
+        const column = document.createElement("show-column");
+        column.setAttribute("id", `col${colArray[i].id}`);
         column.setAttribute("title", colArray[i].title);
 
         column.className = "list";
 
-        main.insertBefore(column, add_List);
+        main.append(column);
 
         //addCard button
 
-        var addButton = document.createElement("span");
-        addButton.className = `col${colArray[i].id}`
-        addButton.id = i
+        const addButton = document.createElement("span");
+        addButton.id = i;
+        addButton.className = `col${colArray[i].id}`;
         addButton.classList.add("addbutton");
         addButton.innerText = "+ Add a Card";
-
-        var cardBox = column.shadowRoot.querySelector(".card");
-        cardBox.appendChild(addButton);
-
+    
         addButton.addEventListener("click", (e) => {
-          removeAddButton(cardBox,e);
-          removeSpan(cardBox,e);
-          var cancelButton = cardBox.querySelector(".cancel");
-          cancelButton.addEventListener("click", (e) => {
-            removeAll(cardBox);
-            appendBackAdd(cardBox);
-          });
+          removeAddButton(e,column);
         });
+
+        column.shadowRoot.appendChild(addButton);
       }
     }
   }
-  addColumn();
+//Removing <span> button to replicit Trello
+  function removeAddButton(e,column) {
+    const parent = e.target.parentNode
 
-  function removeAddButton(cardBox,e) {
-    const columnId = JSON.parse(e.target.id) + 1
+    parent.removeChild(e.target);
+
+    //creating Form for Add card
+    const columnId = JSON.parse(e.target.id) + 1;
     const form = document.createElement("form");
     const input = document.createElement("input");
     const textbox = document.createElement("textarea");
     const cancel = document.createElement("span");
     const addButton = document.createElement("button");
-  
+
     addButton.className = "addbutton";
     addButton.classList.add("clicked");
     addButton.innerText = "+ Add Card";
-  
+
     cancel.innerText = " X ";
     cancel.className = "cancel";
-  
+    cancel.id = e.target.id
+
+
     input.setAttribute("placeholder", "Enter title");
     input.setAttribute("required", "true");
     textbox.setAttribute("placeholder", "Enter description");
     textbox.setAttribute("required", "true");
-  
+
     form.appendChild(input);
     form.appendChild(textbox);
-  
+
     form.appendChild(addButton);
     form.appendChild(cancel);
 
     form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let title = e.target.elements[0].value
-        let body = e.target.elements[1].value
-        //post request for new cards
-        addCard(title, columnId, body);
+      e.preventDefault();
+      let title = e.target.elements[0].value;
+      let body = e.target.elements[1].value;
+      //post request for new cards
+      addCard(title, columnId, body);
+    });
 
+    column.shadowRoot.appendChild(form);
+
+//adding the X to cancel the card input 
+
+    cancel.addEventListener("click",(e) =>{
+        console.log("HELLO")
+        removeAll(e)
+        appendBackAdd(e,column)
     })
-  
-    cardBox.appendChild(form);
   }
 
+// helper function to remove <form> 
+
+  function removeAll(e) {
+    const child = e.target.parentNode.parentNode.querySelector('form');
+    e.target.parentNode.parentNode.removeChild(child);
+  }
+
+// helper function to append back <span>
+
+  function appendBackAdd(e, column) {
+    const addButton = document.createElement("span");
+        addButton.id = e.target.id;
+        addButton.className = `col${JSON.parse(e.target.id) + 1}`;
+
+        addButton.classList.add("addbutton");
+        addButton.innerText = "+ Add a Card";
+
+        addButton.addEventListener("click", (e) => {
+            removeAddButton(e,column);
+          });
+
+    column.shadowRoot.appendChild(addButton);
+  }
+
+  //Post request to Add Cards to the DB
   function addCard(title, column_id, body) {
     let request = new XMLHttpRequest();
 
@@ -102,35 +131,17 @@ const getColumns = () => {
     request.setRequestHeader("content-type", "application/json");
 
     const data = {
-        "title": title,
-        "column_id": column_id,
-        "description": body
-    }
+      title: title,
+      column_id: column_id,
+      description: body,
+    };
 
     request.send(JSON.stringify(data));
 
     setTimeout(() => {
-        render();
-    }, 100)
-}
-  
-  function removeSpan(cardBox) {
-    console.log(cardBox.firstChild);
-    cardBox.removeChild(cardBox.firstChild);
+      render();
+    }, 100);
   }
-  
-  function removeAll(cardBox) {
-    var child = cardBox.querySelector("form");
-    cardBox.removeChild(child);
-  }
-  
-  function appendBackAdd(cardBox) {
-    var addButton = document.createElement("span");
-    addButton.className = "addbutton";
-    addButton.innerText = "+ Add a Card";
-    cardBox.appendChild(addButton);
-  }
-  
 };
 
 //POST Request to column
@@ -170,10 +181,6 @@ const addColumn = () => {
     });
 };
 
-
-
-
 //PUT Request to update column
 
 //DELETE Request to delete column
-
