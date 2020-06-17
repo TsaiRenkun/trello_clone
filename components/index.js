@@ -1,3 +1,6 @@
+const render = () => {
+    const main = document.querySelector("main");
+    getColumns();
+}
 
-
-console.log("working")
+render();

@@ -1,0 +1,52 @@
+body {
+    background-image: url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/372c831e03be9ed43505958ee0ad659f/photo-1581446825137-f07a81380ead.jpg");
+    background-repeat: none;
+    background-position: 50%;
+    background-size: cover;
+}
+
+main {
+    padding-left: 3%;
+    padding-top: 3%;
+    display: flex;
+    justify-content: left;
+}
+
+column-display {
+    width: 227px;
+    margin: 20px;
+    margin-top: 10px;
+    background-color: #ebecf0;
+    color: #6a7d9e;
+    height: max-content;
+}
+
+h1 {
+    padding-left: 4.5%;
+    color: white;
+    margin-bottom: 0;
+}
+
+img {
+    display: inline;
+    color: red;
+}
+
+add-column {
+    width: 272px;
+    margin: 0 4px;
+    height: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+aside {
+    display: inline;
+}
+
+.edit-card {
+    margin-right: 20px;
+    float: none;
+}

@@ -1,57 +1,76 @@
-const getColumns = async() => {
-    const url = 'http://localhost:3000/'
+const getColumns = async () => {
+  const url = "http://localhost:3000/";
 
-    //Set up of communcations
-    var request = new XMLHttpRequest();
+  //Set up of communcations
+  var request = new XMLHttpRequest();
 
-    //GET Request of columns
-    try {
-        request.open('GET', `${url}columns`)
-        request.send();
-        console.log("got data")
-    } catch (Err) {
-        console.log(Err)
+  //GET Request of columns
+  try {
+    request.open("GET", `${url}columns`);
+    request.send();
+    console.log("got data");
+  } catch (Err) {
+    console.log(Err);
+  }
+
+  //Recevied Data from Request
+  request.onreadystatechange = () => {
+    if (request.readyState === 4) {
+      console.log(request.response);
     }
-    
-    //Recevied Data from Request
-    request.onreadystatechange = () => {
-        if(request.readyState === 4){
-            console.log(request.response)
-            }
-    }
-}
+  };
+};
 
-    //POST Request to column
+//POST Request to column
 const addColumn = () => {
-    const url = 'http://localhost:3000/'
+  const url = "http://localhost:3000/";
 
-    //Set up of communcations
-    var request = new XMLHttpRequest();
+  //Set up of communcations
+  var request = new XMLHttpRequest();
 
-    //GET Request of columns
-    try {
-        request.open('POST', `${url}columns`)
-        request.setRequestHeader("content-type", "application/json")
+  //GET Request of columns
+  try {
+    request.open("POST", `${url}columns`);
+    request.setRequestHeader("content-type", "application/json");
 
-        // Data
-        const data = {
-            "title": "NEWNEWNEW" 
-        }
+    // Data
+    const data = {
+      title: "NEWNEWNEW",
+    };
 
-        request.send(JSON.stringify(data));
+    request.send(JSON.stringify(data));
 
-        console.log("sent data")
-    } catch (Err) {
-        console.log(Err)
-    }
-}
+    console.log("sent data");
+  } catch (Err) {
+    console.log(Err);
+  }
+};
 
-    //PUT Request to update column
+//PUT Request to update column
 
-    //DELETE Request to delete column
+const editColumn = () => {
+  const url = "http://localhost:3000/";
 
+  //Set up of communcations
+  var request = new XMLHttpRequest();
 
+  //GET Request of columns
+  try {
+    request.open("POST", `${url}columns`);
+    request.setRequestHeader("content-type", "application/json");
 
+    // Data
+    const data = {
+      title: "NEWNEWNEW",
+    };
 
-getColumns();
-addColumn();
+    request.send(JSON.stringify(data));
+
+    console.log("sent data");
+  } catch (Err) {
+    console.log(Err);
+  }
+};
+
+//DELETE Request to delete column
+
