@@ -36,21 +36,3 @@ img {
     color: red;
 }
 
-add-column {
-    width: 272px;
-    margin: 0 4px;
-    height: 100%;
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    white-space: nowrap;
-}
-
-aside {
-    display: inline;
-}
-
-.edit-card {
-    margin-right: 20px;
-    float: none;
-}

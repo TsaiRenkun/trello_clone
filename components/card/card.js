@@ -16,8 +16,8 @@ class Card extends HTMLElement {
     return this.getAttribute("title");
   }
 
-  get body() {
-    return this.getAttribute("body");
+  get description() {
+    return this.getAttribute("description");
   }
 
   connectedCallback() {
@@ -28,18 +28,25 @@ class Card extends HTMLElement {
     const template = `
           <style>
           p {
-              display: flex;
-              font-size: 20px;
-              font-weight: 600;
-              padding-left: 5px;
-              margin-top: 2px;
+            clear: both;
+            display: block;
+            margin: 0 0 4px;
+            overflow: hidden;
+            text-decoration: none;
+            word-wrap: break-word;
+            color: #172b4d;
+          } 
+
+          h4 {
+              margin:0px
           }
-  
+
+        
           </style>
 
           <div>
             <h4>${this.title}</h4>
-            <p>${body}</p>
+            <p>${this.description}</p>
           </div>
           `;
 

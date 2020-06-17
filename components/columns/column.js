@@ -62,6 +62,10 @@ class Column extends HTMLElement {
             margin: 5px;
           }
 
+        .card{
+            background-color: blue;
+
+        }
         
 
         </style>

@@ -9,15 +9,17 @@ const getColumns = () => {
 
   request.open("GET", `${url}columns`);
   request.send();
+  addColumn();
   request.addEventListener("readystatechange", displayColumns, false);
 
-  //Recevied Data from Request
-  addColumn();
 
+  //Recevied Data from Request
+  
   function displayColumns() {
     if (request.readyState == 4) {
       const main = document.querySelector("main");
       const colArray = JSON.parse(request.response);
+      const addCol = document.querySelector("add-list")
 
       //Creating columns from db.json
       for (let i = 0; i < colArray.length; i++) {
@@ -28,7 +30,7 @@ const getColumns = () => {
 
         column.className = "list";
 
-        main.append(column);
+        main.insertBefore(column,addCol);
 
         //addCard button
 
@@ -46,6 +48,8 @@ const getColumns = () => {
       }
     }
   }
+  
+  
 //Removing <span> button to replicit Trello
   function removeAddButton(e,column) {
     const parent = e.target.parentNode
