@@ -1,36 +1,8 @@
 {
   "columns": [
     {
-      "id": 1,
-      "title": "To do"
-    },
-    {
-      "id": 2,
-      "title": "In progress"
-    },
-    {
-      "id": 3,
-      "title": "Trash"
-    },
-    {
-      "id": 4,
-      "title": "Completed"
-    },
-    {
-      "title": "Helloo",
-      "id": 5
-    },
-    {
-      "title": "asd",
-      "id": 6
-    },
-    {
-      "title": "hello",
-      "id": 7
-    },
-    {
-      "title": "sad",
-      "id": 8
+      "title": "SS",
+      "id": 1
     }
   ],
   "cards": [

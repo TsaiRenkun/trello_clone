@@ -12,14 +12,18 @@ main {
     justify-content: left;
 }
 
-column-display {
-    width: 227px;
-    margin: 20px;
-    margin-top: 10px;
+.list {
     background-color: #ebecf0;
-    color: #6a7d9e;
-    height: max-content;
-}
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    position: relative;
+    white-space: normal;
+    margin: 20px;
+    width: 250px;
+    }
 
 h1 {
     padding-left: 4.5%;

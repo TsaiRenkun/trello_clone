@@ -1,4 +1,4 @@
-class Column extends HTMLElement {
+class addList extends HTMLElement {
   constructor() {
     super();
 
@@ -27,32 +27,21 @@ class Column extends HTMLElement {
             display: flex;
             font-size: 20px;
             font-weight: 600;
-            padding-left: 5px;
-            margin-top: 2px;
+            padding-left: 20px;
         }
-
-        .addbutton {
-            color: #5e6c84;
-            
-        }
-
-        .addbutton:active {
-            background-color: #5aac44;
-            box-shadow: none;
-            border: none;
-            color: #fff;
-          }
-
-        
-
         </style>
 
-            <p>${this.title}</p>
-            <div class="card"></div>
+       
+            <p>Add Column</p>
+            <form id ="add-col">
+                <input type="text" required placeholder="Enter column title"/>
+                <button>ADD</button>
+            <form>
+      
         `;
 
     this.shadow.innerHTML = template;
   }
 }
 
-window.customElements.define("show-column", Column);
+window.customElements.define("add-list", addList);
