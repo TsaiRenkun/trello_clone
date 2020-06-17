@@ -30,8 +30,8 @@ Creating a Trello clone using only web components, vanilla HTML, CSS and JS, wit
  - [x] Create Columns
  - [ ] Update Columns
  - [ ] Delete Columns
- - [ ] Read Cards
- - [ ] Create Cards
+ - [x] Read Cards
+ - [x] Create Cards
  - [ ] Update Cards
  - [ ] Delete Cards
  - [ ] Drag and drop cards into columns
