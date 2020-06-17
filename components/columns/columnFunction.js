@@ -22,7 +22,8 @@ const getColumns = async () => {
 };
 
 //POST Request to column
-const addColumn = () => {
+const addColumn = (title) => {
+
   const url = "http://localhost:3000/";
 
   //Set up of communcations
@@ -34,8 +35,8 @@ const addColumn = () => {
     request.setRequestHeader("content-type", "application/json");
 
     // Data
-    const data = {
-      title: "NEWNEWNEW",
+    var data = {
+        "title": title,
     };
 
     request.send(JSON.stringify(data));
@@ -74,3 +75,15 @@ const editColumn = () => {
 
 //DELETE Request to delete column
 
+
+//Connecting my HTML with addcolumn
+
+document.getElementById("add-col").addEventListener("submit", (e) => {
+    e.preventDefault()
+    console.log(e.target.elements[0].value)
+    var title = e.target.elements[0].value
+        addColumn(title);
+    var input = document.getElementById("add-col").elements;
+    input[0].value = "";
+
+});
