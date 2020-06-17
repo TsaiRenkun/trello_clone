@@ -7,10 +7,10 @@
   ],
   "cards": [
     {
-      "id": 1,
       "title": "Doing stuff",
-      "body": "some comment",
-      "column_id": 1
+      "column_id": "1",
+      "description": "",
+      "id": 1
     }
   ]
 }

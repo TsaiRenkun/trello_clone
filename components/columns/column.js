@@ -31,16 +31,35 @@ class Column extends HTMLElement {
             margin-top: 2px;
         }
 
-        .addbutton {
-            color: #5e6c84;
-            
+        input{
+            margin: 5px;
         }
 
-        .addbutton:active {
+        textarea{
+            margin: 5px;
+        }
+
+        span {
+            display: inline-block
+            padding-left: 5px;
+            color: #5e6c84;
+        }
+
+        .card{
+            padding-left:5px;
+        }
+
+        .addbutton {
+            width:80%;
+            color: #5e6c84;
+        }
+
+        .addbutton.clicked {
             background-color: #5aac44;
             box-shadow: none;
             border: none;
             color: #fff;
+            margin: 5px;
           }
 
         
