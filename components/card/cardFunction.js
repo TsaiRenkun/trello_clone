@@ -140,12 +140,12 @@ function deleteCard(deleteButton) {
         const cardId = deleteButton.id;
 
         //delete request
-        let req = new XMLHttpRequest;
-        req.open("DELETE", "http://localhost:3000/cards/" + cardId, true);
-        req.send();
-        req.addEventListener("readystatechange", function () {
+        let request = new XMLHttpRequest;
+        request.open("DELETE", "http://localhost:3000/cards/" + cardId, true);
+        request.send();
+        request.addEventListener("readystatechange", function () {
 
-            if (req.readyState == 4 && req.status == 200) {
+            if (request.readyState == 4 && request.status == 200) {
                 setTimeout(() => {
                     render();
                 }, 50)

@@ -35,10 +35,19 @@ const getColumns = () => {
         const parenttitle = column.shadowRoot.querySelector("p");
         const editButton = document.createElement("span");
         editButton.innerText = "~";
-
+        const deleteButton = document.createElement("span");
+        deleteButton.innerText = "x";
+        deleteButton.className = "delete"
+        deleteButton.id = colArray[i].id
+        parenttitle.appendChild(deleteButton);
         parenttitle.appendChild(editButton);
+        
 
         editBut(colArray[i], editButton);
+        
+
+        //delete Column 
+        deleteCol(deleteButton);
 
         //addCard button
 
@@ -239,6 +248,28 @@ const addColumn = () => {
     });
 };
 
-//PUT Request to update column
 
 //DELETE Request to delete column
+
+function deleteCol(deleteButton) {
+    console.log(deleteButton.id)
+    deleteButton.addEventListener("click", function (e) {
+        
+        const colId = deleteButton.id;
+
+        //delete request
+        let request = new XMLHttpRequest;
+        request.open("DELETE", "http://localhost:3000/columns/" + colId, true);
+        request.send();
+        request.addEventListener("readystatechange", function () {
+
+            if (request.readyState == 4 && request.status == 200) {
+                setTimeout(() => {
+                    render();
+                }, 100)
+
+            }
+
+        }, false);
+    })
+}

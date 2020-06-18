@@ -51,7 +51,7 @@ class Column extends HTMLElement {
         span {
             display: inline-block
             padding-left: 5px;
-            color: #5e6c84;
+            color: orange;
         }
 
         .card{
@@ -77,6 +77,10 @@ class Column extends HTMLElement {
             margin-left: 50px;
             margin-top: auto;
             margin-bottom: auto;
+        }
+
+        p .delete {
+            color: red;
         }
 
 
