@@ -31,6 +31,8 @@ const getCard = () => {
           card.setAttribute("id", cardsArray[i].id);
           card.setAttribute("title", cardsArray[i].title);
           card.setAttribute("description", cardsArray[i].description);
+          card.className = "draggable";
+          card.draggable = true;
 
           cardBox.append(card);
 
