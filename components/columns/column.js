@@ -36,6 +36,10 @@ class Column extends HTMLElement {
             margin-left: auto;
         }
 
+        p form {
+            display: inline-flex;
+        }
+
         input{
             margin: 5px;
         }
