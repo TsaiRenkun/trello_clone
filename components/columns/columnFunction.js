@@ -145,7 +145,18 @@ const getColumns = () => {
   }
 };
 
-//adding Card
+/* 
+
+
+
+
+add Card functiom, to be used in the add card button in columns
+
+
+
+
+*/
+
 function addCard(title, columnId, body) {
   console.log("ADDINGG");
 
@@ -167,7 +178,18 @@ function addCard(title, columnId, body) {
   }, 100);
 }
 
-//Edit Button
+/* 
+
+
+
+
+Edit Button, PUT REQUEST for columns
+
+
+
+
+*/
+
 function editBut(colArray, editButton) {
   editButton.addEventListener("click", (e) => {
     const parentbox = editButton.parentNode;
@@ -211,7 +233,18 @@ function editBut(colArray, editButton) {
   });
 }
 
-//POST Request to column
+/* 
+
+
+
+
+POST Request to column
+
+
+
+
+*/
+
 const addColumn = () => {
   var addingList = document.createElement("add-list");
   addingList.className = "list";
@@ -248,8 +281,17 @@ const addColumn = () => {
     });
 };
 
+/* 
 
-//DELETE Request to delete column
+
+
+
+DELETE Request to delete column
+
+
+
+
+*/
 
 function deleteCol(deleteButton) {
     console.log(deleteButton.id)
