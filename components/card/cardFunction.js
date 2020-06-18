@@ -54,13 +54,83 @@ const getCard = () => {
               toggle = 0;
             }
           });
+
+          const parenttitle = card.shadowRoot.querySelector("div");
+          const deleteButton = document.createElement("span");
+          deleteButton.innerText = "x";
+          deleteButton.className = "delete"
+
+          const editButton = document.createElement("span");
+          editButton.innerText = "~";
+          
+          parenttitle.appendChild(editButton);
+          parenttitle.appendChild(deleteButton);
+          
+
+          editCard(cardsArray[i], editButton);
         }
       }
     }
   }
-};
 
-//PUT CARDS
+  //PUT CARDS
+  function editCard(cardsArray, editButton) {
+    editButton.addEventListener("click", (e) => {
+      const parentbox = editButton.parentNode;
+      parentbox.innerHTML = "";
+      const title = cardsArray.title;
+      const description = cardsArray.description;
+      const card_id = cardsArray.id;
+      const columnId = cardsArray.column_id;
+
+      const form = document.createElement("form");
+      const input = document.createElement("input");
+      const textbox = document.createElement("textarea");
+      const newEdit = document.createElement("button");
+
+      form.className = "editing";
+
+      input.value = title;
+      input.placeholder = "Edit card title";
+      input.required = true;
+
+      textbox.value = description;
+      textbox.placeholder = "Edit description";
+      textbox.required = true;
+
+      newEdit.innerText = "~";
+
+      parentbox.appendChild(form);
+      form.appendChild(input);
+      form.appendChild(textbox);
+      form.appendChild(newEdit);
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const title = e.target.elements[0].value;
+        const description = e.target.elements[1].value;
+
+        let request = new XMLHttpRequest();
+        request.open("PUT", "http://localhost:3000/cards/" + card_id, true);
+        request.setRequestHeader("content-type", "application/json");
+
+        const data = {
+          title: title,
+          description: description,
+          column_id: columnId,
+        };
+
+        console.log(data);
+
+        request.send(JSON.stringify(data));
+
+        setTimeout(() => {
+          render();
+        }, 100);
+      });
+    });
+  }
+};
 
 //DELETE CARDS
 

@@ -201,6 +201,7 @@ function editBut(colArray, editButton) {
     });
   });
 }
+
 //POST Request to column
 const addColumn = () => {
   var addingList = document.createElement("add-list");

@@ -38,7 +38,17 @@ class Card extends HTMLElement {
           } 
 
           h4 {
-              margin:0px
+            margin: 0px;
+            width: 50%;
+            display: inline-block;
+          }
+
+          div span {
+            margin-inline-start: auto;
+            color: orange;
+            display: inline-block;
+            float: right;
+            max-width: 50%;
           }
 
           div {
@@ -47,14 +57,16 @@ class Card extends HTMLElement {
             border-radius: 3px;
             box-shadow: 0 1px 0 rgba(9,30,66,.25);
             cursor: pointer;
-            display: block;
             margin-bottom: 8px;
             max-width: 300px;
             min-height: 20px;
             position: relative;
             text-decoration: none;
             z-index: 0;
+            display: block;
           }
+
+
           </style>
 
           <div>
