@@ -59,7 +59,6 @@ class Card extends HTMLElement {
 
           <div>
             <h4>${this.title}</h4>
-            <p>${this.description}</p>
           </div>
           `;
 

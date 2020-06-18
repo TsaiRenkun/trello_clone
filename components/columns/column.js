@@ -29,6 +29,11 @@ class Column extends HTMLElement {
             font-weight: 600;
             padding-left: 5px;
             margin-top: 2px;
+            width:90%
+        }
+
+        p span{
+            margin-left: auto;
         }
 
         input{
@@ -46,10 +51,12 @@ class Column extends HTMLElement {
         }
 
         .card{
-            padding-left:5px;
+            padding: 10px;
         }
 
         .addbutton {
+            margin: auto;
+            padding-bottom: 10px;
             width:80%;
             color: #5e6c84;
         }
@@ -61,6 +68,12 @@ class Column extends HTMLElement {
             color: #fff;
             margin: 5px;
           }
+
+        .editing button{
+            margin-left: 50px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
 
 
         </style>

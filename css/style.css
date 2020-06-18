@@ -23,6 +23,7 @@ main {
     white-space: normal;
     margin: 20px;
     width: 250px;
+    height: max-content;
     }
 
 h1 {

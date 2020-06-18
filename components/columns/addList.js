@@ -27,7 +27,12 @@ class addList extends HTMLElement {
             display: flex;
             font-size: 20px;
             font-weight: 600;
-            padding-left: 20px;
+            padding-left: 5px;
+            margin-top: 2px;
+        }
+
+        form {
+            padding: 5px
         }
         </style>
 

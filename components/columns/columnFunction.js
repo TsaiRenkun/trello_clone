@@ -45,11 +45,17 @@ const getColumns = () => {
         });
 
         column.shadowRoot.appendChild(addButton);
+        const parenttitle = column.shadowRoot.querySelector("p")
+        const editButton = document.createElement("span")
+        editButton.innerText = "~";
+
+        parenttitle.appendChild(editButton)
+
+        editBut(colArray[i],editButton);
+
       }
     }
   }
-  
-  
 //Removing <span> button to replicit Trello
   function removeAddButton(e,column) {
     const parent = e.target.parentNode
@@ -71,7 +77,6 @@ const getColumns = () => {
     cancel.innerText = " X ";
     cancel.className = "cancel";
     cancel.id = e.target.id
-
 
     input.setAttribute("placeholder", "Enter title");
     input.setAttribute("required", "true");
@@ -144,10 +149,56 @@ const getColumns = () => {
 
     setTimeout(() => {
       render();
-    }, 100);
+    }, 1000);
   }
 };
 
+//Edit Button
+function editBut(colArray,editButton){
+    console.log(editButton.parentNode)
+    editButton.addEventListener("click", (e)=>{
+      const parentbox = editButton.parentNode
+      parentbox.innerHTML = ""
+      const title = colArray.title
+      const col_id = colArray.id
+      console.log(title, "title")
+
+      const form = document.createElement("form");
+      const input = document.createElement("input");
+      const newEdit = document.createElement("button");
+      form.className = "editing";
+
+      input.value = title;
+      input.placeholder = "Edit column title";
+      input.required = true;
+
+      newEdit.innerText = "~";
+
+      parentbox.appendChild(form)
+      form.appendChild(input)
+      form.appendChild(newEdit)
+
+      form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const title = e.target.elements[0].value;
+
+          let request = new XMLHttpRequest();
+          request.open("PUT", "http://localhost:3000/columns/" + col_id, true);
+          request.setRequestHeader("content-type", "application/json");
+
+          const data = {
+              title: title
+          }
+
+          request.send(JSON.stringify(data));
+
+          setTimeout(() => {
+              render();
+          }, 100)
+      })
+
+    })
+}
 //POST Request to column
 const addColumn = () => {
   var addingList = document.createElement("add-list");
@@ -181,7 +232,7 @@ const addColumn = () => {
 
       setTimeout(() => {
         render();
-      }, 200);
+      }, 100);
     });
 };
 

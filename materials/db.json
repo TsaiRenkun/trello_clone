@@ -1,12 +1,16 @@
 {
   "columns": [
     {
-      "title": "TO do",
+      "title": "TO doss",
       "id": 1
     },
     {
-      "title": "second",
+      "title": "secondhello",
       "id": 2
+    },
+    {
+      "title": "asd",
+      "id": 3
     }
   ],
   "cards": [
@@ -15,24 +19,6 @@
       "column_id": 1,
       "description": "",
       "id": 1
-    },
-    {
-      "title": "sd",
-      "column_id": 1,
-      "description": "",
-      "id": 2
-    },
-    {
-      "title": "second",
-      "column_id": 2,
-      "description": "asd",
-      "id": 3
-    },
-    {
-      "title": "nn",
-      "column_id": 1,
-      "description": "",
-      "id": 4
     }
   ]
 }
