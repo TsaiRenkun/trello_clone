@@ -59,14 +59,15 @@ const getCard = () => {
           const deleteButton = document.createElement("span");
           deleteButton.innerText = "x";
           deleteButton.className = "delete"
+          deleteButton.id = cardsArray[i].id
 
           const editButton = document.createElement("span");
           editButton.innerText = "~";
-          
+
           parenttitle.appendChild(editButton);
           parenttitle.appendChild(deleteButton);
           
-
+          deleteCard(deleteButton)
           editCard(cardsArray[i], editButton);
         }
       }
@@ -133,5 +134,24 @@ const getCard = () => {
 };
 
 //DELETE CARDS
+function deleteCard(deleteButton) {
+    deleteButton.addEventListener("click", function (e) {
+        
+        const cardId = deleteButton.id;
 
-//ADD CARDS
+        //delete request
+        let req = new XMLHttpRequest;
+        req.open("DELETE", "http://localhost:3000/cards/" + cardId, true);
+        req.send();
+        req.addEventListener("readystatechange", function () {
+
+            if (req.readyState == 4 && req.status == 200) {
+                setTimeout(() => {
+                    render();
+                }, 50)
+
+            }
+
+        }, false);
+    })
+}

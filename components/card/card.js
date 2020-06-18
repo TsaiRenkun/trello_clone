@@ -43,6 +43,11 @@ class Card extends HTMLElement {
             display: inline-block;
           }
 
+          div .delete{
+            color: red;
+            margin-right: 25px;
+        }
+
           div span {
             margin-inline-start: auto;
             color: orange;
@@ -51,6 +56,7 @@ class Card extends HTMLElement {
             max-width: 50%;
           }
 
+          
           div {
             padding: 5px;
             background-color: #fff;
