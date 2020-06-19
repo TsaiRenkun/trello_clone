@@ -13,7 +13,6 @@ const getCard = () => {
   function displayCards() {
     if (request.readyState === 4 && request.status === 200) {
       const cardsArray = JSON.parse(request.response);
-      console.log(cardsArray);
 
       for (let i = 0; i < cardsArray.length; i++) {
         const column_id = cardsArray[i].column_id;
@@ -33,8 +32,6 @@ const getCard = () => {
           card.setAttribute("description", cardsArray[i].description);
 
           cardBox.append(card);
-
-          // console.log(card);
 
           const parentbox = card.shadowRoot.childNodes[3];
           const dropbutton = card.shadowRoot.querySelector("div").childNodes[1];
@@ -58,23 +55,37 @@ const getCard = () => {
           const parenttitle = card.shadowRoot.querySelector("div");
           const deleteButton = document.createElement("span");
           deleteButton.innerText = "x";
-          deleteButton.className = "delete"
-          deleteButton.id = cardsArray[i].id
+          deleteButton.className = "delete";
+          deleteButton.id = cardsArray[i].id;
 
           const editButton = document.createElement("span");
           editButton.innerText = "~";
 
           parenttitle.appendChild(editButton);
           parenttitle.appendChild(deleteButton);
-          
-          deleteCard(deleteButton)
+
+          deleteCard(deleteButton);
           editCard(cardsArray[i], editButton);
+        }
+        else {
+            console.error("Please refresh me, Sometimes I get a error with rendering")
         }
       }
     }
   }
 
-  //PUT CARDS
+    /* 
+
+
+
+
+    Edit Button, Put REQUEST for cards
+
+
+
+
+    */
+
   function editCard(cardsArray, editButton) {
     editButton.addEventListener("click", (e) => {
       const parentbox = editButton.parentNode;
@@ -121,8 +132,6 @@ const getCard = () => {
           column_id: columnId,
         };
 
-        console.log(data);
-
         request.send(JSON.stringify(data));
 
         setTimeout(() => {
@@ -131,27 +140,38 @@ const getCard = () => {
       });
     });
   }
-};
 
-//DELETE CARDS
-function deleteCard(deleteButton) {
+    /* 
+
+
+
+
+    Delete Button, Delete REQUEST for cards
+
+
+
+
+    */
+
+  function deleteCard(deleteButton) {
     deleteButton.addEventListener("click", function (e) {
-        
-        const cardId = deleteButton.id;
+      const cardId = deleteButton.id;
 
-        //delete request
-        let request = new XMLHttpRequest;
-        request.open("DELETE", "http://localhost:3000/cards/" + cardId, true);
-        request.send();
-        request.addEventListener("readystatechange", function () {
-
-            if (request.readyState == 4 && request.status == 200) {
-                setTimeout(() => {
-                    render();
-                }, 50)
-
-            }
-
-        }, false);
-    })
-}
+      //delete request
+      let request = new XMLHttpRequest();
+      request.open("DELETE", "http://localhost:3000/cards/" + cardId, true);
+      request.send();
+      request.addEventListener(
+        "readystatechange",
+        function () {
+          if (request.readyState == 4 && request.status == 200) {
+            setTimeout(() => {
+              render();
+            }, 50);
+          }
+        },
+        false
+      );
+    });
+  }
+};

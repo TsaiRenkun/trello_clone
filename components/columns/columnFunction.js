@@ -73,11 +73,9 @@ const getColumns = () => {
 
   //Removing <span> button to replicit Trello
   function removeAddButton(e, column) {
-    console.log(column);
+ 
     const parent = e.target.parentNode;
 
-    console.log(parent);
-    console.log(e.target);
 
     parent.removeChild(e.target);
 
@@ -152,21 +150,19 @@ const getColumns = () => {
 
   function dragging(e){
 
-    console.log("dragging");
     colId = e.id
     const column = (document.querySelector(`#col${colId}`));
     column.classList.add("draggable")
     column.draggable = true;
-      const draggables = document;
 
+    /* 
 
-      console.log("called")
-      console.log(draggables);
-      const containers = document.querySelectorAll(".container");
+    Couldnt get it to work fully 
+
+    */
 
     //   draggables.forEach(draggable => {
     //     draggable.addEventListener('dragstart', () => {
-    //       console.log("dragging")
     //       draggable.classList.add('dragging')
     //     })
 
@@ -289,7 +285,6 @@ const addColumn = () => {
 
   const request = new XMLHttpRequest();
 
-  console.log("HELLO");
 
   addingList.shadowRoot
     .querySelector("#add-col")
@@ -326,7 +321,6 @@ DELETE Request to delete column
 */
 
 function deleteCol(deleteButton) {
-    console.log(deleteButton.id)
     deleteButton.addEventListener("click", function (e) {
         
         const colId = deleteButton.id;
