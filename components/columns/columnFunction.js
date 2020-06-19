@@ -61,6 +61,12 @@ const getColumns = () => {
         });
 
         column.shadowRoot.appendChild(addButton);
+
+        //ADD FUNCTION DRAGGABLE
+
+        dragging(colArray[i])
+
+    
       }
     }
   }
@@ -143,6 +149,33 @@ const getColumns = () => {
 
     column.shadowRoot.appendChild(addButton);
   }
+
+  function dragging(e){
+
+    console.log("dragging");
+    colId = e.id
+    const column = (document.querySelector(`#col${colId}`));
+    column.classList.add("draggable")
+    column.draggable = true;
+      const draggables = document;
+
+
+      console.log("called")
+      console.log(draggables);
+      const containers = document.querySelectorAll(".container");
+
+    //   draggables.forEach(draggable => {
+    //     draggable.addEventListener('dragstart', () => {
+    //       console.log("dragging")
+    //       draggable.classList.add('dragging')
+    //     })
+
+    //     draggable.addEventListener('dragend', () => {
+    //       draggable.classList.remove('dragging')
+    //     })
+    //   })
+
+  }
 };
 
 /* 
@@ -158,7 +191,6 @@ add Card functiom, to be used in the add card button in columns
 */
 
 function addCard(title, columnId, body) {
-  console.log("ADDINGG");
 
   let request = new XMLHttpRequest();
 

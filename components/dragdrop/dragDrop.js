@@ -1,18 +1,22 @@
 function dragDrop() {
-const draggables = document.querySelectorAll('.draggable')
-console.log("called")
-console.log(draggables)
-const containers = document.querySelectorAll('.container')
+      console.log(document.querySelector("main"));
+      const draggables = document;
+      // console.log(main.querySelectorAll(".list"))
 
-draggables.forEach(draggable => {
-  draggable.addEventListener('dragstart', () => {
-    console.log("dragging")
-    draggable.classList.add('dragging')
-  })
+      // console.log("called")
+      console.log(draggables);
+      const containers = document.querySelectorAll(".container");
 
-  draggable.addEventListener('dragend', () => {
-    draggable.classList.remove('dragging')
-  })
-})
+      // draggables.forEach(draggable => {
+      //   draggable.addEventListener('dragstart', () => {
+      //     console.log("dragging")
+      //     draggable.classList.add('dragging')
+      //   })
 
-}
+      //   draggable.addEventListener('dragend', () => {
+      //     draggable.classList.remove('dragging')
+      //   })
+      // })
+    }
+
+

@@ -1,125 +1,78 @@
 {
   "columns": [
     {
-      "title": "TO d",
+      "title": "To do",
       "id": 1
     },
     {
-      "title": "in progress",
+      "title": "In progress",
       "id": 2
     },
     {
-      "title": "asd",
+      "title": "Completed",
       "id": 3
     }
   ],
   "cards": [
     {
-      "title": "Cook dog",
+      "title": "Do homework",
       "column_id": 1,
-      "description": "sd",
-      "id": 1
-    },
-    {
-      "title": "as",
-      "column_id": 2,
-      "description": "s",
+      "description": "Math",
       "id": 2
     },
     {
-      "title": "ee",
-      "column_id": 2,
-      "description": "ee",
+      "title": "Cook dinner",
+      "column_id": 1,
+      "description": "Chicken Rice",
       "id": 3
     },
     {
-      "title": "asd",
+      "title": "Feed the dog",
       "column_id": 1,
-      "description": "as",
+      "description": "feed with things",
       "id": 4
     },
     {
-      "title": "asd",
+      "title": "Working Out",
       "column_id": 2,
-      "description": "dd",
+      "description": "Legs day",
       "id": 5
     },
     {
-      "title": "asd",
+      "title": "Listening to Music",
       "column_id": 2,
-      "description": "dd",
+      "description": "John Mayer",
       "id": 6
     },
     {
-      "title": "asd",
+      "title": "Eat dinner",
       "column_id": 2,
-      "description": "dd",
+      "description": "Eat stuff",
       "id": 7
     },
     {
-      "title": "RERR",
+      "title": "Doing stuff",
       "column_id": 2,
-      "description": "RE",
+      "description": "walk the dog",
       "id": 8
     },
     {
-      "title": "asdasas",
-      "column_id": 2,
-      "description": "dad",
+      "title": "Running ",
+      "column_id": 3,
+      "description": "Ran 5km",
       "id": 9
     },
     {
-      "title": "as",
-      "column_id": 1,
-      "description": "aa",
+      "title": "Workout",
+      "column_id": 3,
+      "description": "Chest day",
       "id": 10
     },
     {
-      "title": "asd",
-      "column_id": 2,
-      "description": "dd",
+      "title": "Eating cake",
+      "column_id": 3,
+      "description": "chocolate cake",
       "id": 11
-    },
-    {
-      "title": "asd",
-      "column_id": 2,
-      "description": "dd",
-      "id": 12
-    },
-    {
-      "title": "Change",
-      "description": "aa",
-      "id": 13
-    },
-    {
-      "title": "asd",
-      "column_id": 2,
-      "description": "dd",
-      "id": 14
-    },
-    {
-      "title": "mnn",
-      "column_id": 1,
-      "description": "nnn",
-      "id": 15
-    },
-    {
-      "title": "nn",
-      "column_id": 3,
-      "description": " nnn",
-      "id": 16
-    },
-    {
-      "title": "bbb",
-      "column_id": 2,
-      "description": "bnbbb",
-      "id": 17
-    },
-    {
-      "title": "cahnged",
-      "description": "dd",
-      "column_id": 3,
-      "id": 18
     }
   ]
 }

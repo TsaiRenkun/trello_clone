@@ -83,15 +83,6 @@ class Column extends HTMLElement {
             color: red;
         }
 
-
-        .draggable {
-            cursor: move;
-        }
-        
-        .draggable.dragging {
-            opacity: .5;
-        }
-
         </style>
 
             <p>${this.title}</p>

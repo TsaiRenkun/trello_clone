@@ -36,3 +36,11 @@ img {
     display: inline;
     color: red;
 }
+
+.draggable {
+    cursor: move;
+}
+
+.draggable.dragging {
+    opacity: .5;
+}

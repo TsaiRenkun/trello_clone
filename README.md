@@ -33,17 +33,27 @@ Creating a Trello clone using only web components, vanilla HTML, CSS and JS, wit
 
 - [x] Read Columns
 - [x] Create Columns
+
 - [x] Update Columns
 - [x] Delete Columns
+
 - [x] Read Cards
 - [x] Create Cards
+
 - [x] Update Cards
 - [x] Delete Cards
 
 - [ ] Drag and drop cards into columns
 
 ## Challenges
+
 1. The first challenge was understanding the use of custom-elements, Custom elements are very useful as the styling was done in the Js file. I found it diffcult to understand shadowDom and how to reach it in the earlier parts of the project.
 2. It was difficult to keep the lines of code to a minimum, dom manipulation required me to create buttons and divs on the go.
+3. Css, working with the shadowdom.
+4. Drag & drop, Finish the project with in the time frame of 2 days. wasnt able to get it to fully work.
 
 ## Furthers
+
+1. Extending cards when clicked to read descirption
+2. Deleting columns & cards
+3. Editing Columns & cards 
