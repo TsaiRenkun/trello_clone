@@ -6,7 +6,7 @@ Creating a Trello clone using only web components, vanilla HTML, CSS and JS, wit
 
 1.  Install Node.js: `https://nodejs.org/en/`
 2.  Install JSON Server via your Command Line Interface(CLI): `npm install -g json-server`
-3.  Create a folder, navigate into it via CLI and run: ``
+3.  Create a folder, navigate into it via CLI and run: `https://github.com/TsaiRenkun/trello_clone.git`
 4.  Run `json-server --watch materials\db.json`
 5.  Open the folder on your Windows/Mac and open the index.html via Chrome.
 
