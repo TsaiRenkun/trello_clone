@@ -25,9 +25,8 @@ Creating a Trello clone using only web components, vanilla HTML, CSS and JS, wit
 3.  Update card content, by clicking on orange ~ on the right side of card
 4.  Delete cards by clicking by clicking the Red X at the cener of the card
 
-- Json-Server sometimes has a delay in reading the data, therefore content might not appear. Just refresh the window!
-
-## Structure of application
+- Json-Server sometimes has a delay in reading the data, therefore content might not appear. 
+- Refresher
 
 ## MVP
 
